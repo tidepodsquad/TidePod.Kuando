@@ -9,7 +9,7 @@
         DoNotDisturb,
         Inactive,
         InCall,
-        InConferenceCAll,
+        InConferenceCall,
         InMeeting,
         OffWork
     }

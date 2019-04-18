@@ -16,6 +16,7 @@
   
   <ItemGroup>
     <ProjectReference Include="..\TidePod.Kuando.Skype\TidePod.Kuando.Skype.csproj" />
+    <ProjectReference Include="..\TidePod.Kuando.Slack\TidePod.Kuando.Slack.csproj" />
   </ItemGroup>
   
   <ItemGroup>
@@ -33,6 +34,9 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Controls\SkypePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\SlackPicker.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

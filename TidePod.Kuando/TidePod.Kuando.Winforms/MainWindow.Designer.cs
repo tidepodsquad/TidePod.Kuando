@@ -34,8 +34,9 @@
             this.BlueButton = new System.Windows.Forms.Button();
             this.WhiteButton = new System.Windows.Forms.Button();
             this.OffButton = new System.Windows.Forms.Button();
-            this.ManualColorPicker = new TidePod.Kuando.Winforms.Controls.ColorPicker();
+            this.SlackPicker = new TidePod.Kuando.Winforms.Controls.SlackPicker();
             this.SkypeForBusinessPicker = new TidePod.Kuando.Winforms.Controls.SkypePicker();
+            this.ManualColorPicker = new TidePod.Kuando.Winforms.Controls.ColorPicker();
             this.SuspendLayout();
             // 
             // RedButton
@@ -97,12 +98,12 @@
             this.OffButton.Text = "Off";
             this.OffButton.UseVisualStyleBackColor = true;
             // 
-            // ManualColorPicker
+            // SlackPicker
             // 
-            this.ManualColorPicker.Location = new System.Drawing.Point(12, 12);
-            this.ManualColorPicker.Name = "ManualColorPicker";
-            this.ManualColorPicker.Size = new System.Drawing.Size(289, 31);
-            this.ManualColorPicker.TabIndex = 0;
+            this.SlackPicker.Location = new System.Drawing.Point(12, 288);
+            this.SlackPicker.Name = "SlackPicker";
+            this.SlackPicker.Size = new System.Drawing.Size(150, 150);
+            this.SlackPicker.TabIndex = 8;
             // 
             // SkypeForBusinessPicker
             // 
@@ -111,11 +112,19 @@
             this.SkypeForBusinessPicker.Size = new System.Drawing.Size(287, 37);
             this.SkypeForBusinessPicker.TabIndex = 7;
             // 
+            // ManualColorPicker
+            // 
+            this.ManualColorPicker.Location = new System.Drawing.Point(12, 12);
+            this.ManualColorPicker.Name = "ManualColorPicker";
+            this.ManualColorPicker.Size = new System.Drawing.Size(289, 31);
+            this.ManualColorPicker.TabIndex = 0;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(310, 447);
+            this.Controls.Add(this.SlackPicker);
             this.Controls.Add(this.SkypeForBusinessPicker);
             this.Controls.Add(this.OffButton);
             this.Controls.Add(this.WhiteButton);
@@ -124,8 +133,12 @@
             this.Controls.Add(this.YellowButton);
             this.Controls.Add(this.RedButton);
             this.Controls.Add(this.ManualColorPicker);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(330, 490);
+            this.MinimumSize = new System.Drawing.Size(330, 490);
             this.Name = "MainWindow";
-            this.Text = "MainWindow";
+            this.Text = "Kuando Interface";
             this.ResumeLayout(false);
 
         }
@@ -140,5 +153,6 @@
         private System.Windows.Forms.Button WhiteButton;
         private System.Windows.Forms.Button OffButton;
         private Controls.SkypePicker SkypeForBusinessPicker;
+        private Controls.SlackPicker SlackPicker;
     }
 }

@@ -1,8 +1,9 @@
 ﻿using Busylight;
-using TidePod.Kuando.Skype;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TidePod.Kuando.Skype;
+using TidePod.Kuando.Slack;
 
 namespace TidePod.Kuando.Winforms
 {
@@ -53,6 +54,8 @@ namespace TidePod.Kuando.Winforms
             this.OffButton.Click += (obj, e) => this.HumanChangedColor(ColorAdapter.Off);
 
             this.SkypeForBusinessPicker.OnUserStateChange += this.SkypeStatusChanged;
+
+            this.SlackPicker.OnUserMention += this.SlackUserMentioned;
 
             this.lastHumanColor = null;
         }
@@ -108,7 +111,7 @@ namespace TidePod.Kuando.Winforms
                     break;
                 case UserState.DoNotDisturb:
                 case UserState.InCall:
-                case UserState.InConferenceCAll:
+                case UserState.InConferenceCall:
                 case UserState.InMeeting:
                     this.ComputerWantsToTakeControl(ColorAdapter.Red);
                     break;
@@ -118,6 +121,11 @@ namespace TidePod.Kuando.Winforms
                 default:
                     throw new InvalidOperationException("Unrecognized UserState.");
             }
+        }
+
+        private void SlackUserMentioned(object sender, UserMentionEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

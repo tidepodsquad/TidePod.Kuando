@@ -28,7 +28,7 @@
                     state = UserState.InCall;
                     return true;
                 case "In a conference call":
-                    state = UserState.InConferenceCAll;
+                    state = UserState.InConferenceCall;
                     return true;
                 case "In a meeting":
                     state = UserState.InMeeting;
