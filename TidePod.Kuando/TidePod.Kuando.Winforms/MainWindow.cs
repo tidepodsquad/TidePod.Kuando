@@ -113,6 +113,7 @@ namespace TidePod.Kuando.Winforms
                 case UserState.InCall:
                 case UserState.InConferenceCall:
                 case UserState.InMeeting:
+                case UserState.Presenting:
                     this.ComputerWantsToTakeControl(ColorAdapter.Red);
                     break;
                 case UserState.OffWork:

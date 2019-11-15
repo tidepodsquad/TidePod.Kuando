@@ -11,6 +11,7 @@
         InCall,
         InConferenceCall,
         InMeeting,
+        Presenting,
         OffWork
     }
 }

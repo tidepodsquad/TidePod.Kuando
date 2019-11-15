@@ -33,6 +33,9 @@
                 case "In a meeting":
                     state = UserState.InMeeting;
                     return true;
+                case "Presenting":
+                    state = UserState.Presenting;
+                    return true;
                 case "Off work":
                     state = UserState.OffWork;
                     return true;
