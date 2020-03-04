@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.IO;
 using System.IO.Pipes;
 using System.ServiceProcess;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -32,8 +33,8 @@ namespace TidePod.Kuando.Service
             {
                 await server.WaitForConnectionAsync(cancellationToken);
 
-                using (StreamReader reader = new StreamReader(server, leaveOpen: true))
-                using (StreamWriter writer = new StreamWriter(server, leaveOpen: true))
+                using (StreamReader reader = new StreamReader(server, Encoding.UTF8, leaveOpen: true))
+                using (StreamWriter writer = new StreamWriter(server, Encoding.UTF8, leaveOpen: true))
                 {
                     string? result = await reader.ReadLineAsync();
                     Console.WriteLine(result);
