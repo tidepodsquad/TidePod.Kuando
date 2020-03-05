@@ -6,6 +6,7 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using TidePod.Kuando.Shared;
 
 namespace TidePod.Kuando.Service
 {
@@ -24,30 +25,16 @@ namespace TidePod.Kuando.Service
 
         public async Task RunAsync(CancellationToken cancellationToken)
         {
-            using (NamedPipeServerStream server = new NamedPipeServerStream(
-                "foo",
-                PipeDirection.InOut,
-                1,
-                PipeTransmissionMode.Message,
-                PipeOptions.WriteThrough))
+            using (Server server = await Server.Create(cancellationToken).ConfigureAwait(false))
             {
-                await server.WaitForConnectionAsync(cancellationToken);
-
-                using (StreamReader reader = new StreamReader(server, Encoding.UTF8, leaveOpen: true))
-                using (StreamWriter writer = new StreamWriter(server, Encoding.UTF8, leaveOpen: true))
+                try
                 {
-                    string? result = await reader.ReadLineAsync();
-                    Console.WriteLine(result);
+                    await Task.Delay(-1, cancellationToken);
                 }
-            }
-
-            try
-            {
-                await Task.Delay(-1, cancellationToken);
-            }
-            catch (TaskCanceledException)
-            {
-                // Do nothing; the caller ends execution by calling the token.
+                catch (TaskCanceledException)
+                {
+                    // Do nothing; the caller ends execution by calling the token.
+                }
             }
         }
 

@@ -15,6 +15,7 @@
   </ItemGroup>
   
   <ItemGroup>
+    <ProjectReference Include="..\TidePod.Kuando.Shared\TidePod.Kuando.Shared.csproj" />
     <ProjectReference Include="..\TidePod.Kuando.Skype\TidePod.Kuando.Skype.csproj" />
     <ProjectReference Include="..\TidePod.Kuando.Slack\TidePod.Kuando.Slack.csproj" />
   </ItemGroup>
