@@ -27,6 +27,9 @@ namespace TidePod.Kuando.Service
         {
             using (Server server = await Server.Create(cancellationToken).ConfigureAwait(false))
             {
+                server.OnColorMessage += (obj, e) => { };
+                server.OnException += (obj, e) => { throw e; };
+
                 try
                 {
                     await Task.Delay(-1, cancellationToken);

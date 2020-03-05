@@ -15,7 +15,7 @@ namespace TidePod.Kuando.Winforms
         {
             using (Client client = await Client.Create(default).ConfigureAwait(false))
             {
-
+                await client.SendAsync(new ColorMessage(32, 64, 128)).ConfigureAwait(false);
             }
 
             Application.EnableVisualStyles();

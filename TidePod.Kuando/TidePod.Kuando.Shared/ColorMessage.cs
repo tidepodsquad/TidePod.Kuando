@@ -1,4 +1,8 @@
-﻿namespace TidePod.Kuando.Shared
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace TidePod.Kuando.Shared
 {
     public sealed class ColorMessage
     {

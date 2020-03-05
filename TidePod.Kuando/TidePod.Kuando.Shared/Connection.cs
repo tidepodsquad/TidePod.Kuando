@@ -18,22 +18,28 @@ namespace TidePod.Kuando.Shared
             this.writer = new StreamWriter(stream, Encoding.UTF8, 1024, true);
         }
 
-        private protected async Task Send(string message)
+        private protected async Task SendAsync(string message)
         {
             await this.writer.WriteLineAsync(message).ConfigureAwait(false);
             await this.writer.FlushAsync().ConfigureAwait(false);
         }
 
-        private protected async Task<string> Receive()
+        private protected async Task<string> ReceiveAsync()
         {
             return await this.reader.ReadLineAsync();
         }
 
         public void Dispose()
         {
+            this.DisposeInternal();
+
             this.reader.Dispose();
             this.writer.Dispose();
             this.stream.Dispose();
+        }
+
+        protected virtual void DisposeInternal()
+        {
         }
     }
 }

@@ -32,5 +32,12 @@ namespace TidePod.Kuando.Shared
                 throw;
             }
         }
+
+        public async Task SendAsync(ColorMessage colorMessage)
+        {
+            await this
+                .SendAsync($"0,{colorMessage.Red},{colorMessage.Green},{colorMessage.Blue}")
+                .ConfigureAwait(false);
+        }
     }
 }
